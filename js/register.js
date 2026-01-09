@@ -1,21 +1,27 @@
-const inputNome = document.querySelector("#inputNome")
-const inputEmail = document.querySelector("#inputEmail")
-const inputPassword = document.querySelector("#inputPassword")
-const btnSaveRegister = document.querySelector("#btnSaveRegister")
+const formRegister = document.querySelector('#formRegister')
+const inputNome = document.querySelector('#inputNome')
+const inputEmail = document.querySelector('#inputEmail')
+const inputPassword = document.querySelector('#inputPassword')
+const inputConfirmPassword = document.querySelector('#inputConfirmPassword')
 
+const btnSaveRegister = document.querySelector('#btnSaveRegister')
 
-function validateDatas(e){
-    e.preventDefault()
+function validateFields(e) {
+  e.preventDefault()
 
-    if(inputNome.value.trim()==="" || inputEmail.value.trim()==="" || inputPassword.value.trim()===""){
-        console.log("Campos em branco")
-    }
-    else{
-        console.log(`Preenchido: ${inputNome.value}`)
-    }
+  if (inputNome.value.trim() === "" ||
+    inputEmail.value.trim() === "" ||
+    inputPassword.value.trim() === "" || inputConfirmPassword.value.trim() === "") {
+    alert("Campo deve ser preenchido")
+  }
+
+  else if (inputPassword.value !== inputConfirmPassword.value) {
+    alert("Senhas não conferem")
+  }
+
+  else {
+    alert("Preenchido...")
+  }
 }
 
-btnSaveRegister.addEventListener('click', validateDatas)
-
-
-//Adicionando o js ao formulário de cadastro
+btnSaveRegister.addEventListener("click", validateFields)

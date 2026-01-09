@@ -7,47 +7,47 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>JS Firebase Register</title>
 </head>
-<!----
-Atualizar titulo botão formálário de cadastro
--->
-<body>
-    <form id="formRegister" class="flex flex-col mx-auto pb-1 px-2 max-w-5xl relative">
 
-        <button class="px-8 bg-green-600 text-white rounded-sm cursor-pointer max-w-[200px] py-2 absolute right-0 top-[10px]">
+<body>
+    <form id="formRegister" class="flex flex-col mx-auto pb-4 px-5 max-w-5xl relative">
+
+        <button type="button" class="px-8 bg-green-600 text-white rounded-sm cursor-pointer max-w-[200px] py-2 absolute right-[10px] top-[10px]">
             <a href="../index.html">Área de login</a>
         </button>
 
         <h2 class="text-center text-5xl mt-[100px] mb-[30px] font-light">Formulário de cadastro</h2>
 
-        <div class="grid grid-cols-2 gap-6 pb-8">
+        <div class="md:grid md:grid-cols-2 md:gap-8 pb-8">
             <div>
-                <label class="text-sm" for="inputNome">Nome completo</label>
+                <label class="text-sm block mt-4 md:mt-0" for="inputNome">Nome completo</label>
                 <input type="text" placeholder="Nome completo" class="border border-gray-300 rounded-sm py-2 px-2 block w-full"
-                    id="inputNome">
+                    id="inputNome" required>
             </div>
 
             <div>
-                <label class="text-sm" for="inputEmail">E-mail</label>
-                <input type="text" placeholder="E-mail" class="border border-gray-300 rounded-sm py-2 px-2 block w-full"
-                    id="inputEmail">
-            </div>
-            <div>
-                <label class="text-sm" for="inputPassword">Senha</label>
-                <input type="password" placeholder="***********"
-                    class="border border-gray-300 rounded-sm py-2 px-2 block w-full" id="inputPassword">
+                <label class="text-sm block mt-4 md:mt-0" for="inputEmail">E-mail</label>
+                <input type="email" placeholder="E-mail" class="border border-gray-300 rounded-sm py-2 px-2 block w-full"
+                    id="inputEmail" required>
             </div>
 
             <div>
-                <label class="text-sm" for="inputConfirmPassword">Confirmar senha</label>
+                <label class="text-sm block mt-4 md:mt-0" for="inputPassword">Senha</label>
                 <input type="password" placeholder="***********"
-                    class="border border-gray-300 rounded-sm py-2 px-2 block w-full" id="inputConfirmPassword">
+                    class="border border-gray-300 rounded-sm py-2 px-2 block w-full" id="inputPassword" required>
+            </div>
+
+            <div>
+                <label class="text-sm block mt-4 md:mt-0" for="inputConfirmPassword">Confirmar senha</label>
+                <input type="password" placeholder="***********"
+                    class="border border-gray-300 rounded-sm py-2 px-2 block w-full" id="inputConfirmPassword" required>
             </div>
         </div>
-        <button type="submit" id="btnSaveRegister" class="py-2 rounded-sm bg-green-600 text-white cursor-pointer max-w-[300px]">Salvar
-            Cadastro</button>
+
+        <button type="submit" id="btnSaveRegister" class="py-2 rounded-sm bg-green-600 text-white cursor-pointer max-w-[300px]">
+            Salvar Cadastro
+        </button>
 
     </form>
-
 
     <script src="../js/register.js" type="module"></script>
 </body>
