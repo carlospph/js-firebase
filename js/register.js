@@ -11,7 +11,7 @@ function validateDatas(e){
         console.log("Campos em branco")
     }
     else{
-        console.log(`Preenchido: ${inputNome}`)
+        console.log(`Preenchido: ${inputNome.value}`)
     }
 }
 
