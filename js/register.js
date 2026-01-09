@@ -7,7 +7,7 @@ const btnSaveRegister = document.querySelector("#btnSaveRegister")
 function validateDatas(e){
     e.preventDefault()
 
-    if(inputNome.value===""){
+    if(inputNome.value.trim()==="" || inputEmail.value.trim()==="" || inputPassword.value.trim()===""){
         console.log("Campos em branco")
     }
     else{
