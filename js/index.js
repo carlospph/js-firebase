@@ -3,7 +3,6 @@ import { auth } from './firebase.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
 const btnLogin = document.getElementById("btnLogin");
-
 function acessarHome() {
     const inputLogin = document.getElementById("login").value;
     const inputSenha = document.getElementById("senha").value;
