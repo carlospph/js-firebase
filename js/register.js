@@ -15,5 +15,7 @@ function validateDatas(e){
     }
 }
 
+btnSaveRegister.addEventListener('click', validateDatas)
+
 
 //Adicionando o js ao formulário de cadastro
