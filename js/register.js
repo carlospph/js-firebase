@@ -1,7 +1,7 @@
 const inputNome = document.querySelector("#inputNome").value
 const inputEmail = document.querySelector("#inputEmail").value
 const inputPassword = document.querySelector("#inputPassword").value
-const btnSaveRegister = document.querySelector("btnSaveRegister")
+const btnSaveRegister = document.querySelector("#btnSaveRegister")
 
 
 function validateDatas(e){
