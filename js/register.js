@@ -4,24 +4,33 @@ const inputEmail = document.querySelector('#inputEmail')
 const inputPassword = document.querySelector('#inputPassword')
 const inputConfirmPassword = document.querySelector('#inputConfirmPassword')
 
-const btnSaveRegister = document.querySelector('#btnSaveRegister')
+// Regex para validação de e-mail
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function validateFields(e) {
   e.preventDefault()
 
-  if (inputNome.value.trim() === "" ||
+   if (inputNome.value.trim() === "" ||
     inputEmail.value.trim() === "" ||
-    inputPassword.value.trim() === "" || inputConfirmPassword.value.trim() === "") {
-    alert("Campo deve ser preenchido")
+    inputPassword.value.trim() === "" || 
+    inputConfirmPassword.value.trim() === "") {
+    alert("Todos os campos devem ser preenchidos")
+    return 
   }
 
-  else if (inputPassword.value !== inputConfirmPassword.value) {
-    alert("Senhas não conferem")
+   if (!emailRegex.test(inputEmail.value)) {
+    alert("Por favor, insira um e-mail válido")
+    inputEmail.focus()
+    return
   }
 
-  else {
-    alert("Preenchido...")
+   if (inputPassword.value !== inputConfirmPassword.value) {
+    alert("As senhas não conferem")
+    return
   }
+
+   alert("Cadastro validado com sucesso! Pronto para salvar no Firebase.")
+   
 }
 
-btnSaveRegister.addEventListener("click", validateFields)
+ formRegister.addEventListener("submit", validateFields)
