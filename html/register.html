@@ -8,21 +8,26 @@
     <title>JS Firebase Register</title>
 </head>
 
+<!----Atualizar formário de cadastro -->
+
 <body>
-    <form id="formRegister" class="flex flex-col gap-3">  
-    <input type="text" placeholder="Nome completo" class="border border-gray-300 rounded-sm py-3 px-2 block"
+    <form id="formRegister" class="flex flex-col gap-3 max-w-[400px] mx-auto"> 
+        
+        <h2 class="text-center text-2xl mt-2">Formulário de cadastro</h2>
+        
+    <input type="text" placeholder="Nome completo" class="border border-gray-300 rounded-sm py-2 px-2 block"
         id="inputNome">
 
     <input type="text" 
         placeholder="E-mail" 
-        class="border border-gray-300 rounded-sm py-3 px-2 block" id="inputEmail">
+        class="border border-gray-300 rounded-sm py-2 px-2 block" id="inputEmail">
 
         <input type="password" 
         placeholder="***********"
-        class="border border-gray-300 rounded-sm py-3 px-2 block"
+        class="border border-gray-300 rounded-sm py-2 px-2 block"
         id="inputPassword">
 
-        <button type="submit" id="btn-save-usuario" class="py-3 rounded-sm">Salvar Cadastro</button>
+        <button type="submit" id="btn-save-usuario" class="py-2 rounded-sm">Salvar Cadastro</button>
 
     </form>
 </body>
