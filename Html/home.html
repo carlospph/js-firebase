@@ -1,0 +1,102 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .header-home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            background-color: #2c3e50;
+            color: white;
+            position: relative;
+        }
+
+        /* Estilo da caixa do usuário no canto direito */
+        .iconeUser {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .iconeUser p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Estilo do Ícone de Logout (O Botão) */
+        #btnDeslogar {
+            cursor: pointer;
+            color: #ff4d4d;
+            /* Vermelho para indicar saída */
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        #btnDeslogar:hover {
+            color: #ff8080;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-home" class="header-home">
+    </div>
+
+    <script type="module">
+        import { auth } from "../js/firebase.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const header = document.getElementById("header-home");
+
+                // Injetamos o HTML com o ícone de logout (fa-right-from-bracket)
+                header.innerHTML = `
+                    <h1 class="title-main">Bem-vindo ao Js Firebase</h1>
+                    <p class="tema">Conteúdos sobre Firebase com JavaScript</p>
+                    
+                    <div class="iconeUser">
+                        <i class="fa-solid fa-user"></i>
+                        <p>${user.email}</p> 
+                        <i class="fa-solid fa-right-from-bracket" id="btnDeslogar" title="Sair do sistema"></i>
+                    </div>
+                `;
+
+                // IMPORTANTE: O addEventListener tem que vir LOGO APÓS o innerHTML
+                const logoutIcon = document.getElementById("btnDeslogar");
+                logoutIcon.addEventListener("click", () => {
+                    deslogar();
+                });
+
+            } else {
+                // Se não estiver logado, vai direto para a index
+                window.location.href = "../index.html";
+            }
+        });
+
+        // Função que ativa o logout no Firebase e redireciona
+        function deslogar() {
+            signOut(auth).then(() => {
+                console.log("Usuário deslogado com sucesso.");
+                window.location.href = "../index.html";
+            }).catch((error) => {
+                alert("Erro ao deslogar: " + error.message);
+            });
+        }
+    </script>
+</body>
