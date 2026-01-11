@@ -5,3 +5,12 @@ body {
 .cursor-pointer{
     cursor: pointer;
 }
+
+
+.top-25{
+  top: 1rem;
+}
+
+.end-10{
+  right: 15px;
+}
