@@ -34,7 +34,7 @@ async function realizarCadastroCompleto() {
         });
 
         alert("Cadastro realizado com sucesso!");
-        window.location.href = "index.html"; // Redireciona para o login
+        window.location.href = "../index.html"; // Redireciona para o login
 
     } catch (error) {
         console.error("Erro completo:", error);
