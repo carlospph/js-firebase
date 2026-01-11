@@ -8,9 +8,9 @@ onAuthStateChanged(auth, (user) => {
        const email = document.querySelector("#email")
        email.textContent = user.email
 
-       const deslogar = document.querySelector("#btn-deslogar")
-            deslogar.addEventListener("click", deslogar)
-            
+       const btnDeslogar = document.querySelector("#btn-deslogar")
+            btnDeslogar.addEventListener("click", deslogar)
+
     } else {
         window.location.href = "../index.html";
     }
