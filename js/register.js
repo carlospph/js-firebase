@@ -29,7 +29,7 @@ function validateFields(e) {
     return
   }
 
-   alert("Cadastro validado com sucesso! Pronto para salvar no Firebase.")
+   alert(inputNome.value, inputEmail.value)
    
 }
 
