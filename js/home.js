@@ -5,7 +5,8 @@ import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/
 onAuthStateChanged(auth, (user) => {
     if (user) {
        //chamar a função deslogar ao clicar
-       
+       const email = document.querySelector("#email")
+       email.textContent = "meu email é essse"
     } else {
         window.location.href = "../index.html";
     }
