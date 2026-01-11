@@ -54,5 +54,41 @@
 
 </html> -->
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Completo</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .form-container { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 10px; }
+        input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
 
-export const db = getFirestore(app); // Exporta o banco de dados
+    <div class="form-container">
+        <h2>Criar Perfil Completo</h2>
+        
+        <input type="email" id="email" placeholder="E-mail (Login)" required>
+        <input type="password" id="senha" placeholder="Senha (mín. 6 caracteres)" required>
+        
+        <hr style="width:100%">
+        
+        <input type="text" id="nome" placeholder="Nome Completo" required>
+        <input type="tel" id="telefone" placeholder="Telefone (DDD + número)">
+        <input type="text" id="endereco" placeholder="Endereço Completo">
+        <label for="nascimento" style="font-size: 12px; color: #666;">Data de Nascimento:</label>
+        <input type="date" id="nascimento">
+
+        <button id="btnCadastrar">Finalizar Cadastro</button>
+        <p style="text-align:center"><a href="index.html">Já tenho conta</a></p>
+    </div>
+
+    <script type="module" src="cadastro.js"></script>
+</body>
+</html>
