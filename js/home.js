@@ -7,6 +7,10 @@ onAuthStateChanged(auth, (user) => {
        //chamar a função deslogar ao clicar
        const email = document.querySelector("#email")
        email.textContent = user.email
+
+       const deslogar = document.querySelector("#btn-deslogar")
+            deslogar.addEventListener("click", deslogar)
+            
     } else {
         window.location.href = "../index.html";
     }
