@@ -1,6 +1,12 @@
 import { auth } from './firebase.js'; // Conexao do firebase
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
+// Importe a função para inicializar o Auth e a função específica de login
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+// Inicialize o serviço de autenticação
+const auth = getAuth();
+
 const btnLogin = document.getElementById("btnLogin");
 function acessarHome() {
     const inputLogin = document.getElementById("login").value;
