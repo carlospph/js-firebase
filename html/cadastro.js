@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { auth, db } from "./firebase.js"; // Seu arquivo de config
+import { auth, db } from "../js/firebase.js"; // Seu arquivo de config
 
 const btnCadastrar = document.getElementById("btnCadastrar");
 
