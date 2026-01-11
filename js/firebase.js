@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
   import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"; // Novo import para informações adicionais e salvar no cloud firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAU2dav003KmQsibZwBIao21R7cRA8nL28",
   authDomain: "js-puro-help.firebaseapp.com",
@@ -14,3 +14,4 @@ const firebaseConfig = {
  const app = initializeApp(firebaseConfig);
 
  export const auth = getAuth(app); 
+ export const db = getFirestore(app); // Exporta o banco de dados das informações adicionais
