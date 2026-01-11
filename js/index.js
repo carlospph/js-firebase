@@ -1,11 +1,4 @@
-import { auth } from './firebase.js'; // Conexao do firebase
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
-
-// Importe a função para inicializar o Auth e a função específica de login
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-
-// Inicialize o serviço de autenticação
-const auth = getAuth();
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const btnLogin = document.getElementById("btnLogin");
 function acessarHome() {
@@ -17,34 +10,20 @@ function acessarHome() {
         return;
     }
 
-    // signInWithEmailAndPassword(auth, inputLogin, inputSenha)
-    //     .then((userCredential) => {
-    //         const user = userCredential.user;
-    //         window.location.href = "html/home.html";
-    //     })
-    //     .catch((error) => {
-    //         if (error.code === "auth/invalid-credential") {
-    //             alert("E-mail ou senha incorretos.");
-    //         } else if (error.code === "auth/user-not-found") {
-    //             alert("Usuário não encontrado.");
-    //         } else {
-    //             alert("Erro ao tentar entrar: " + error.message);
-    //         }
-    //     });
+    else {
 
-
-   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
-
-
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
 }
 
 btnLogin.addEventListener("click", acessarHome);
