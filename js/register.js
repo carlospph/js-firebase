@@ -29,7 +29,8 @@ function validateFields(e) {
     return
   }
 
-   alert(inputNome.value, inputEmail.value)
+   alert(inputNome.value)
+   alert(inputEmail.value)
    
 }
 
