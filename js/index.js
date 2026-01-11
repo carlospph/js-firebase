@@ -31,7 +31,7 @@ function acessarHome() {
         if (user) {
             var email = user.email;
         } else {
-            
+            console.log("Algo errado...")
         }
     });
     firebase.auth().signInWithEmailAndPassword(email, password);
