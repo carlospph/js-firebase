@@ -27,14 +27,17 @@ function acessarHome() {
     //     });
 
 
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            var email = user.email;
-        } else {
-            console.log("Algo errado...")
-        }
-    });
-    firebase.auth().signInWithEmailAndPassword(email, password);
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
 
 
 }
