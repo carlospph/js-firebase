@@ -2,39 +2,6 @@ body {
     background: #f2f2f2;
 }
 
-.header-home {
-    background-color: white;
-    border-radius: 20px;
-    padding: .6rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    margin-top: 2rem;
-    max-width: 1200px;
-    position: relative;
-}
-
-.title-main {
-    font-size: 36px;
-    margin-top: 26px;
-    text-align: center;
-}
-
-.tema {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.iconeUser {
-    display: flex;
-    font-size: 13px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.fa-right-from-bracket {
-    margin-left: 12px;
+.cursor-pointer{
     cursor: pointer;
 }
