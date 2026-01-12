@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Redefinir Senha - Js Firebase</title>
+</head>
+
+<body class="container-body">
+    <div class="container-login">
+        <h2>Criar Nova Senha</h2>
+        <p>Digite sua nova senha abaixo:</p>
+
+        <input type="password" placeholder="Nova Senha" id="inputNovaSenha" class="input-login">
+        <input type="password" placeholder="Confirme a Nova Senha" id="inputConfirmaSenha" class="input-login">
+
+        <button id="btnSalvarSenha" class="btn-login">Salvar Nova Senha</button>
+
+        <div id="mensagem"></div>
+    </div>
+
+    <script type="module" src="../js/firebase.js"></script>
+    <script type="module" src="../js/finalizarReset.js"></script>
+</body>
+
+</html>
