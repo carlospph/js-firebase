@@ -22,7 +22,6 @@ btnSalvar.addEventListener('click', async () => {
     }
 
     try {
-        // 2. Envia para o Firebase
         await confirmPasswordReset(auth, oobCode, novaSenha);
         alert("Senha alterada com sucesso! Você será redirecionado para o login.");
         window.location.href = "../index.html";
